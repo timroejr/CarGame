@@ -24,7 +24,7 @@ public class CarGame {
 
         appFrame = new JFrame("Car Game");
         appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        appFrame.setSize(700,575);
+        appFrame.setSize(700,700);
 
 
         JPanel panelControl = new JPanel();
@@ -103,6 +103,8 @@ public class CarGame {
                     playerOneVelocity = playerOneVelocity - velocitystep;
                 }
 
+                System.out.println(playerOneVelocity);
+
 //                if (leftPressed == true) {
 //                    if (playerOneRotation < 0.0) {
 //                        playerOneRotation
@@ -147,7 +149,6 @@ public class CarGame {
         public void actionPerformed(ActionEvent e) {
             if (action.equals("UP")) {
                 upPressed = true;
-                System.out.println("working");
             }
 
             if (action.equals("DOWN")) {
@@ -155,7 +156,7 @@ public class CarGame {
             }
         }
 
-        private static String action;
+        private String action;
     }
 
     private static class KeyReleased extends AbstractAction {
@@ -179,7 +180,7 @@ public class CarGame {
             }
         }
 
-        private static String action;
+        private String action;
 
     }
 
@@ -209,7 +210,7 @@ public class CarGame {
         private static void backgroundDraw() {
             Graphics g = appFrame.getGraphics();
             Graphics2D g2D = (Graphics2D) g;
-            g2D.drawImage(background, 0, 0, null);
+            g2D.drawImage(background, 0, 100, null);
         }
 
         private static void playerOneDraw() {
